@@ -50,6 +50,10 @@ session_start();
             {
                 echo '<strong><p style="background-color:white;text-align:center;font-size:15px;color:green">Your email is activated, thanks!. You may now login.</p></strong>';
             }
+            else if(isset($_GET['signup']) == "success")
+            {
+                echo '<strong><p style="background-color:white;text-align:center;font-size:15px;color:green">Signup successfully. Verify your email to enable login.</p></strong>';
+            }
             
             else if(isset($_GET['updatesuccess']) == "updated")
             {
