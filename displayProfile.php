@@ -225,13 +225,18 @@ $conn = new PDO("mysql:host=$DB_DSN;dbname=Matcha", $DB_USER, $DB_PASSWORD);
 ?>
 
 <script>
-      $.getJSON('https://geolocation-db.com/json/')
-         .done (function(location) {
-            // $('#country').html(location.country_name);
-            // $('#state').html(location.state);
-            $('#city').html(location.city);
-            // $('#latitude').html(location.latitude);
-            // $('#longitude').html(location.longitude);
-            // $('#ip').html(location.IPv4);
-         });
+    //   $.getJSON('https://geolocation-db.com/json/')
+    //      .done (function(location) {
+    //         // $('#country').html(location.country_name);
+    //         // $('#state').html(location.state);
+    //         $('#city').html(location.city);
+    //         // $('#latitude').html(location.latitude);
+    //         // $('#longitude').html(location.longitude);
+    //         // $('#ip').html(location.IPv4);
+    //      });
+
+    $.get("https://api.astroip.co/?api_key=1725e47c-1486-4369-aaff-463cc9764026", function(response) {
+             $('#city').html(response.geo.city)
+            console.log(response.geo.city);
+    });
 </script>

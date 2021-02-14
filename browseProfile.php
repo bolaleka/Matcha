@@ -51,7 +51,6 @@ $conn = new PDO("mysql:host=$DB_DSN;dbname=Matcha", $DB_USER, $DB_PASSWORD);
    $_SESSION['location'] =  $row['Location']; 
    $_SESSION['inter'] =  $row['Interest']; 
 
-
    if($_SESSION['sex_gender'] == "Male" && $_SESSION['sex_orient'] == "Straight")
    {
         

@@ -9,7 +9,7 @@ if(isset($_POST['reset-submit']))
   
   $selector = bin2hex(random_bytes(8));
   $token = random_bytes(32);
-  $url = "http://localhost/Matcha/Create-new-pwd.php?selector=".$selector. "&validator=" . bin2hex($token);
+  $url = "http://localhost/Matcha/Matcha/Create-new-pwd.php?selector=".$selector. "&validator=" . bin2hex($token);
   $expire = date("U") + 1800;
 
   $userEmail = $_POST['email'];

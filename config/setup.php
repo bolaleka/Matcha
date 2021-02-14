@@ -2,13 +2,13 @@
     include "database.php";
 
     try {
-        $conn->exec("CREATE DATABASE IF NOT EXISTS `matcha`");
+        $conn->exec("CREATE DATABASE IF NOT EXISTS `Matcha`");
     } catch (PDOException $e) {
         echo $e->getMessage();
     }
 
     
-    $conn = new PDO("mysql:host=$DB_DSN;dbname=matcha", $DB_USER, $DB_PASSWORD);
+    $conn = new PDO("mysql:host=$DB_DSN;dbname=Matcha", $DB_USER, $DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   try

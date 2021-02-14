@@ -21,7 +21,7 @@ else
             $stmt->execute();
     
             $res = $stmt->fetch(PDO::FETCH_ASSOC);
-            echo strtoupper( $res['username']);
+           // echo strtoupper( $res['username']);
     }
     
     function interest() 
@@ -168,7 +168,7 @@ else
   </div>
  
   <?php
-        if($row && $location && $aboutme)
+        if($row)
         { 
             echo '<img  width="120" height="120" src="upload/'.$row['imgfullNameCam'].' ">';
         }else {
@@ -197,13 +197,15 @@ else
         include "config/database.php";
         $conn = new PDO("mysql:host=$DB_DSN;dbname=Matcha", $DB_USER, $DB_PASSWORD);
         
-            $sql = "SELECT username FROM profileupdate WHERE update_userId = '$unique_id' ";
+            $sql = "SELECT username FROM users WHERE UsersId = '$unique_id' ";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
     
             $res = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $rot =  $res['username'];
            
-            echo "<p><h1 style='color:green'>Welcome";  getCurrentUser(); ?></h1></p><br/>
+            echo "<p><h1 style='color:green'>Welcome "; echo $rot ?></h1></p><br/>
         
         
   <?php 

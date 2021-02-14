@@ -48,12 +48,12 @@ if(isset($_POST['SearchUser']))
                         $_SESSION['sexpref'] = $res['sexualPreference'];
                     
                     }
-                    header("location: PublicProfile.php?$username=userprofile");
+                    header("location: browseProfile.php?username=userprofile");
                     exit();
             }
             else
             {
-                header("location: index.php?$username=namedoesnotexist");
+                header("location: browseProfile.php?username=namedoesnotexist");
                 exit();
             }
         }

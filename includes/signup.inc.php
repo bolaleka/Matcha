@@ -102,13 +102,13 @@ if(isset($_POST['Submit-SignUp']))
                 
                 
                 $token =  bin2hex(random_bytes(50));
-                $verificationLink = "http://localhost/Matcha/includes/activate.inc.php?code=".$token;
+                $verificationLink = "http://localhost/matcha/includes/activate.inc.php?code=".$token;
                 $htmlStr = "";
                 $htmlStr .= "Hi " . $username . ",<br /><br />";
                 $htmlStr .= "Please click the button below to verify your email and have access to the login page.<br /><br /><br />";
                 $htmlStr .= "<a href='{$verificationLink}' target='_blank' style='padding:1em; font-weight:bold; background-color:blue; color:#fff;'>VERIFY EMAIL</a><br /><br /><br />";
                 $htmlStr .= "Kind regards,<br />";
-                $htmlStr .= "<a href='http://localhost/Matcha/' target='_blank'>The Code of Matcher</a><br />";
+                $htmlStr .= "<a href='http://localhost/matcha/' target='_blank'>The Code of Matcher</a><br />";
 
                 $name = "The Code of Matcher";
                 $email_sender = "no-reply@Matcher.com";

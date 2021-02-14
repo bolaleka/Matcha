@@ -13,20 +13,17 @@ if(isset($_POST['update']))
     $lastNam = $_POST['lastName'];
     $firstName  = $_POST['firstName'];
     $sex_pref = $_POST['SexualPreference'];
-    $Oldpwd = $_POST['old-pwd'];
+   // $Oldpwd = $_POST['old-pwd'];
     $Newpwd = $_POST['new-pwd'];
     $RepeatNewPwd = $_POST['repeat-new-pwd'];
     $age = $_POST['age'];
     $interest = $_POST['interest'];
 
-    $str = file_get_contents('https://geolocation-db.com/json/');
+    $str = file_get_contents("https://api.astroip.co/?api_key=1725e47c-1486-4369-aaff-463cc9764026");
     $json = json_decode($str, true);
-    $newcity = $json["city"];
+    $newcity = $json["geo"]["city"];
 
-    // echo $newcity;
-    //  exit();
 
-    
     // if(!filter_var($Email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9 ]*$\/", $Username) )
     // {
     //     header("location: UsersProfile.php?error=invaliduidmail");
@@ -211,9 +208,13 @@ if(isset($_POST['update']))
                                 }
                                 if($interest)
                                 {
+                                    echo $interest;
                                         $sql = "UPDATE profileupdate SET Interest='$interest' WHERE update_userId='$usr_id'  ";
                                         $stmt = $conn->prepare($sql);
+                                    
                                         $stmt->execute(); 
+
+                                        
                         
                                 }
                                 if($newcity)
@@ -228,7 +229,7 @@ if(isset($_POST['update']))
                             {
                                 try
                                 {            
-                                    $sql2 = "INSERT INTO profileupdate (update_userId, AboutMe, Gender, sexualPreference, username, `Location`, Age, fame) VALUES ('{$verifyID}', '{$aboutme}', '{$gender}', '{$sex_pref}', '{$newuser}', '{$newcity}', '{$age}', 1)";
+                                    $sql2 = "INSERT INTO profileupdate (update_userId, AboutMe, Gender, sexualPreference, username, `Location`, Age, interest, fame) VALUES ('{$verifyID}', '{$aboutme}', '{$gender}', '{$sex_pref}', '{$newuser}', '{$newcity}', '{$age}', '{$interest}', 1)";
                                     $stm = $conn->prepare($sql2);
                                     $stm->execute();
 

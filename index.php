@@ -52,7 +52,7 @@ session_start();
             }
             else if(isset($_GET['signup']) == "success")
             {
-                echo '<strong><p style="background-color:white;text-align:center;font-size:15px;color:green">Signup successfully. Verify your email to enable login.</p></strong>';
+                echo '<strong><p style="background-color:white;text-align:center;font-size:15px;color:green">Signup Successfully, activate your email to enable login </p></strong>';
             }
             
             else if(isset($_GET['updatesuccess']) == "updated")
