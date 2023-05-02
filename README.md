@@ -1,5 +1,5 @@
 ## Matcha
-This aim of the Matcha project is to build on the foundations we learnt while building Camagru.
+This aim of the Matcha project is to build on the foundations we learnt from Tinder app.
 
 Matcha is a small web application that works much like tinder, allowing you to find people around you based on certain preferences like age, gender and geo location.
 
